@@ -1,0 +1,8 @@
+#+TITLE: README
+#+AUTHOR: Ryan Devens
+#+DATE: 2026-09-13 10:49
+#+OPTIONS: toc:nil num:nil
+#+SUMMARY: README for project for general access to
+
+This repo is for the CMDs i might use to run tailscale on my machines.
+Also relevant info pertaining to how to use it.
