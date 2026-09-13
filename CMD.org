@@ -50,55 +50,19 @@ tailscale status
 #+DESC: SSHes into the pi over the tailnet and lists /dev/video* plus v4l2-ctl detail
 #+BEFORE: set PI_HOST in pi_host.conf first
 #+OUTPUT: prints to this terminal, writes nothing
-#+NEXT: pick a number 0-3 and run the matching View-Camera command
+#+NEXT: run View-Camera and pick a webcam from its menu
 #+BEGIN_SRC sh
 ./SCRIPTS/list_cameras.sh
 #+END_SRC
 
-* view camera 0
-#+NAME: View-Camera-0
+* view camera
+#+NAME: View-Camera
 #+KIND: ui_script
 #+GROUP: cameras
-#+PLAIN: Opens a local window showing the pi's first USB webcam, /dev/video0.
-#+DESC: streams mjpeg over the tailnet SSH connection into a local ffplay window
+#+PLAIN: Asks which USB webcam plugged into the pi to show, then opens it in a local window.
+#+DESC: lists /dev/v4l/by-id capture nodes on the pi, streams the pick as mjpeg into ffplay
 #+BEFORE: set PI_HOST in pi_host.conf first
 #+OUTPUT: opens an ffplay window, writes nothing to disk
 #+BEGIN_SRC sh :session
-./SCRIPTS/view_camera.sh 0
-#+END_SRC
-
-* view camera 1
-#+NAME: View-Camera-1
-#+KIND: ui_script
-#+GROUP: cameras
-#+PLAIN: Opens a local window showing the pi's second USB webcam, /dev/video1.
-#+DESC: streams mjpeg over the tailnet SSH connection into a local ffplay window
-#+BEFORE: set PI_HOST in pi_host.conf first
-#+OUTPUT: opens an ffplay window, writes nothing to disk
-#+BEGIN_SRC sh :session
-./SCRIPTS/view_camera.sh 1
-#+END_SRC
-
-* view camera 2
-#+NAME: View-Camera-2
-#+KIND: ui_script
-#+GROUP: cameras
-#+PLAIN: Opens a local window showing the pi's third USB webcam, /dev/video2.
-#+DESC: streams mjpeg over the tailnet SSH connection into a local ffplay window
-#+BEFORE: set PI_HOST in pi_host.conf first
-#+OUTPUT: opens an ffplay window, writes nothing to disk
-#+BEGIN_SRC sh :session
-./SCRIPTS/view_camera.sh 2
-#+END_SRC
-
-* view camera 3
-#+NAME: View-Camera-3
-#+KIND: ui_script
-#+GROUP: cameras
-#+PLAIN: Opens a local window showing the pi's fourth USB webcam, /dev/video3.
-#+DESC: streams mjpeg over the tailnet SSH connection into a local ffplay window
-#+BEFORE: set PI_HOST in pi_host.conf first
-#+OUTPUT: opens an ffplay window, writes nothing to disk
-#+BEGIN_SRC sh :session
-./SCRIPTS/view_camera.sh 3
+./SCRIPTS/view_camera.sh
 #+END_SRC
