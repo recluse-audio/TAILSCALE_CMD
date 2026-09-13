@@ -20,6 +20,16 @@ sudo tailscale up --ssh
 tailscale status
 #+END_SRC
 
+#+RESULTS:
+|  100.108.130.75 | artie-thinkpad-p51s-w10dg | ryandevens92@ | linux   | -        |      |      |      |      |
+|   100.120.14.55 | artiepc                   | ryandevens92@ | windows | -        |      |      |      |      |
+|    100.89.27.73 | pi-21c865                 | ryandevens92@ | linux   | offline, | last | seen | 179d | ago  |
+| 100.114.174.118 | raspi-calvin              | ryandevens92@ | linux   | offline, | last | seen |  99d | ago  |
+|   100.95.183.40 | raspi-desktop             | ryandevens92@ | linux   | -        |      |      |      |      |
+|   100.101.162.4 | raspi-harrison            | ryandevens92@ | linux   | offline, | last | seen | 100d | ago  |
+|   100.96.47.108 | raspi-organizer           | ryandevens92@ | linux   | offline, | last | seen |  70d | ago  |
+| 100.115.108.109 | raspi-parishilton         | ryandevens92@ | linux   | idle,    | tx   | 5308 |   rx | 5732 |
+
 * ssh test ping
 #+NAME: SSH_Test_Ping
 #+KIND: ui_script
@@ -30,6 +40,8 @@ tailscale status
 #+BEGIN_SRC sh :session
 ./SCRIPTS/ssh_test_ping.sh
 #+END_SRC
+
+#+RESULTS:
 
 * list cameras
 #+NAME: List-Cameras
