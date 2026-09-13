@@ -6,3 +6,24 @@
 
 This repo is for the CMDs i might use to run tailscale on my machines.
 Also relevant info pertaining to how to use it.
+
+* SETUP_INSTRUCTIONS
+
+** STEPS [0/6]
+- [ ] On pi: install tailscale, =curl -fsSL https://tailscale.com/install.sh | sh=
+- [ ] On pi: =sudo tailscale up --ssh=, follow the printed URL to log in
+- [ ] On pi: install camera tools, =sudo apt install -y ffmpeg v4l-utils=
+- [ ] On pi: find this pi's tailnet name, =tailscale status=, note the hostname column
+- [ ] On laptop: set =PI_HOST=user@hostname= in =TAILSCALE_CMD/pi_host.conf=
+- [ ] On laptop: confirm cameras found, =./SCRIPTS/list_cameras.sh=
+
+** NOTES
+
+* DEVICES
+
+** this device
+- tailnet name: =artie-thinkpad-p51s-w10dg= (this is what identifies it, use it in =PI_HOST= / =tailscale ssh=)
+- tailscale user: ryandevens92
+- tailnet IP: 100.108.130.75 (rarely needed, the tailnet name resolves via MagicDNS)
+- role: runs =rd_cmd= / this repo's =SCRIPTS/= to view the pi's webcams
+- needs installed: =tailscale=, =ffmpeg=, =ffplay= (confirmed present via =which=)
