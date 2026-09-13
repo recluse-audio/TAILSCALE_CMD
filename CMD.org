@@ -2,38 +2,38 @@
 #+REPO: TAILSCALE_CMD
 
 * set pi host
-#+NAME: set-pi-host
+#+NAME: Set-Pi-Host
 #+KIND: reference
 Edit ~pi_host.conf~ at this repo's root, one line: ~PI_HOST=user@tailnet-hostname~.
 Find the tailnet hostname with ~tailscale status~ once the pi has run
 ~RD_CMD/CONFIG/COMMON/TAILSCALE/setup.sh~ and been authorized in the browser.
 
 * connect to tailnet
-#+NAME: connect
+#+NAME: Connect
 #+KIND: manual
 #+PLAIN: Joins this computer to the tailnet and lets peers SSH in, key-free.
 #+DESC: runs tailscale up --ssh, then lists every device on the tailnet
 #+OUTPUT: no files, connects the network interface and prints a login URL on first run
-#+NEXT: run list-cameras once the pi shows up in the peer list
+#+NEXT: run List-Cameras once the pi shows up in the peer list
 #+BEGIN_SRC sh
 sudo tailscale up --ssh
 tailscale status
 #+END_SRC
 
 * list cameras
-#+NAME: list-cameras
+#+NAME: List-Cameras
 #+KIND: ui_script
 #+PLAIN: Shows which of the pi's four USB webcams are present, as /dev/videoN.
 #+DESC: SSHes into the pi over the tailnet and lists /dev/video* plus v4l2-ctl detail
 #+BEFORE: set PI_HOST in pi_host.conf first
 #+OUTPUT: prints to this terminal, writes nothing
-#+NEXT: pick a number 0-3 and run the matching view-camera command
+#+NEXT: pick a number 0-3 and run the matching View-Camera command
 #+BEGIN_SRC sh
 ./SCRIPTS/list_cameras.sh
 #+END_SRC
 
 * view camera 0
-#+NAME: view-camera-0
+#+NAME: View-Camera-0
 #+KIND: ui_script
 #+GROUP: cameras
 #+PLAIN: Opens a local window showing the pi's first USB webcam, /dev/video0.
@@ -45,7 +45,7 @@ tailscale status
 #+END_SRC
 
 * view camera 1
-#+NAME: view-camera-1
+#+NAME: View-Camera-1
 #+KIND: ui_script
 #+GROUP: cameras
 #+PLAIN: Opens a local window showing the pi's second USB webcam, /dev/video1.
@@ -57,7 +57,7 @@ tailscale status
 #+END_SRC
 
 * view camera 2
-#+NAME: view-camera-2
+#+NAME: View-Camera-2
 #+KIND: ui_script
 #+GROUP: cameras
 #+PLAIN: Opens a local window showing the pi's third USB webcam, /dev/video2.
@@ -69,7 +69,7 @@ tailscale status
 #+END_SRC
 
 * view camera 3
-#+NAME: view-camera-3
+#+NAME: View-Camera-3
 #+KIND: ui_script
 #+GROUP: cameras
 #+PLAIN: Opens a local window showing the pi's fourth USB webcam, /dev/video3.
