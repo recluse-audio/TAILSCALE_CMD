@@ -20,6 +20,17 @@ sudo tailscale up --ssh
 tailscale status
 #+END_SRC
 
+* ssh test ping
+#+NAME: SSH_Test_Ping
+#+KIND: ui_script
+#+PLAIN: Asks which online tailnet device to target, then checks ping and SSH into it.
+#+DESC: lists online peers, runs tailscale ping, then tailscale ssh user@host and prints hostname
+#+BEFORE: add the device's login user to ssh_users.conf, or type it at the prompt
+#+OUTPUT: prints to this terminal, writes nothing
+#+BEGIN_SRC sh :session
+./SCRIPTS/ssh_test_ping.sh
+#+END_SRC
+
 * list cameras
 #+NAME: List-Cameras
 #+KIND: ui_script
